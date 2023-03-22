@@ -64,7 +64,12 @@
 
 
 // Task 6 Number: flats
-//убил весь мозг ((( ))) 
-//макс количество квартир в падике для округления = кол-во квартир на этаж*кол-во этажей
-//искомый подъезд = если превышает макс кол-во квартир в подъезде = следующий подъезд
-// искомый этаж = количество квартир в подъезде 
+let floors = Number(prompt("Введите количество этажей в дома"))
+let flatsPerFloor = Number(prompt("Введите количество квартир на этаж"))
+let flatNumber = Number(prompt("Введите номер квартиры"))
+
+
+let ourFloor = Math.ceil((flatNumber % (floors * flatsPerFloor)) / flatsPerFloor);
+let enterance = Math.ceil(flatNumber / (floors * flatsPerFloor));
+
+alert(`Квартира ${flatNumber} знаходиться на поверху№ ${ourFloor} та у під'їзді ${enterance}. Дякую`)
