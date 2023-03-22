@@ -141,3 +141,63 @@ else {
     alert("Такого пользователя не существует")
 }
 
+
+
+// Currency exchange
+
+let currency = prompt("Введіть валюту").toUpperCase();
+let operation = confirm("продаємо?");
+
+let rate;
+
+if (currency === "USD") { 
+    rate = operation ? 38 : 38.65;
+} else if (currency === "EUR") {
+    rate = operation ? 40 : 41,3;
+} else {
+    alert("невідома валюта")
+}
+
+let amount = Number(prompt("введіть сумму транзакції"));
+let result = Math.round(operation ? amount * rate : amount / rate);
+
+alert(`Ви отримаєте ${result} обратної валюти`)
+
+
+// Rock, paper, scissors
+
+let userChoice = prompt("Rock, paper, scissors:").toLowerCase();
+
+let computerChoice = Math.random()
+if (computerChoice < 0.34) {
+    computerChoice = "rock"
+} else if (computerChoice <= 0.67) {
+    computerChoice = "paper"
+} else {
+    computerChoice = "scissors"
+}
+
+alert(`Computer selected ${computerChoice}`);
+
+// определение победителя
+
+if (computerChoice === userChoice) {
+    alert("No winner");
+} else if (userChoice === "rock") {
+    if (computerChoice === "scissors") {
+        alert("You are a rock-winner");
+    } else {
+        alert("Computer wins")
+    } 
+} else if (userChoice === "paper") {
+    if (computerChoice === "rock") {
+        alert("You are a paper-winner!");
+    } else {
+        alert("Computer wins!");
+   } } else if (userChoice === "scissors") {
+    if (computerChoice === "paper") {
+        alert("You are a scissors-winner");
+    } else {
+        alert("Computer wins");
+    }
+}
